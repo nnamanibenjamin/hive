@@ -1,18 +1,29 @@
-# GoFiixit — 30s Vertical Advert
+# GoFiixit — 30s Vertical Adverts
 
-A premium social advert (1080×1920, 30s, H.264 + AAC) for **GoFiixit**, a home
+Premium social adverts (1080×1920, 30s, H.264 + AAC) for **GoFiixit**, a home
 services platform. Produced entirely **free / offline** with OpenMontage:
 Remotion for visuals, **Piper TTS** for the voiceover, a procedural FFmpeg music
 bed, and FFmpeg for the final mux. **No API keys used.**
 
-## Build
+## Two versions
+
+| Version | Composition | Build | Output |
+|---------|-------------|-------|--------|
+| **Brand film** (logo-only, gear motif, kinetic type) — *current* | `GoFiixitBrandAd` | `ads/gofiixit/build_brandfilm.sh` | `GoFiixit_BrandFilm_30s.mp4` |
+| App demo (real screenshots in a phone mockup) — *v1* | `GoFiixitAd` | `ads/gofiixit/build.sh` | `GoFiixit_Ad_30s.mp4` |
+
+The brand film uses the **en_GB-cori-high** (British) voice and a fixed audio
+chain that normalizes **each line individually** rather than across the whole
+track — this removes the hiss/"shhh" that global normalization caused in v1.
+
+## Build (brand film)
 
 ```bash
 cd openmontage
 . .venv/bin/activate
 export REMOTION_IGNORE_CERT_ERRORS=1   # only in proxied-TLS sandboxes
-bash ads/gofiixit/build.sh
-# -> projects/gofiixit/renders/GoFiixit_Ad_30s.mp4
+bash ads/gofiixit/build_brandfilm.sh
+# -> projects/gofiixit/renders/GoFiixit_BrandFilm_30s.mp4
 ```
 
 ## What's where

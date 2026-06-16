@@ -17,6 +17,7 @@ import { CaptionOverlay, WordCaption } from "./components/CaptionOverlay";
 import { CollageBurst, CollageBurstProps } from "./CollageBurst";
 import { LyricOverlay, LyricOverlayProps } from "./LyricOverlay";
 import { GoFiixitAd, GoFiixitAdProps } from "./GoFiixitAd";
+import { GoFiixitBrandAd, GoFiixitBrandAdProps } from "./GoFiixitBrandAd";
 
 // ---------------------------------------------------------------------------
 // Theme System — prevents every video from looking like dark fintech
@@ -136,6 +137,19 @@ const calculateMetadata: CalculateMetadataFunction<ExplainerProps> = async ({
 export const Root: React.FC = () => {
   return (
     <>
+      <Composition
+        id="GoFiixitBrandAd"
+        component={GoFiixitBrandAd}
+        durationInFrames={900}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          navy: "#0F4C81",
+          navyDeep: "#06243C",
+          amber: "#F5B301",
+        } as GoFiixitBrandAdProps}
+      />
       <Composition
         id="GoFiixitAd"
         component={GoFiixitAd}
