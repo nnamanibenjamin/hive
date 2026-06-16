@@ -79,3 +79,7 @@ remotion-composer/public/*
 remotion-composer/public/demo-props/test-*
 remotion-composer/public/demo-props/talking-head-*
 remotion-composer/public/demo-props/caption-burn-*
+# scratch + downloaded models (not committed)
+work/
+voices/
+ads/gofiixit/*.wav
